@@ -1,14 +1,59 @@
 {
-    "notes": [
-      {
-        "content": "the app state is in redux store",
-        "important": true,
-        "id": 1
-      },
-      {
-        "content": "state changes are made with actions",
-        "important": false,
-        "id": 2
-      }
-    ]
-  }
+  "notes": [
+    {
+      "content": "the app state is in redux store",
+      "important": true,
+      "id": 1
+    },
+    {
+      "content": "state changes are made with actions",
+      "important": false,
+      "id": 2
+    },
+    {
+      "content": "This is a new note",
+      "important": false,
+      "id": 3
+    },
+    {
+      "content": "I have a note to complete",
+      "important": false,
+      "id": 4
+    },
+    {
+      "content": "Added new note in json server",
+      "important": false,
+      "id": 5
+    },
+    {
+      "content": "My name is anthony gonsalvis",
+      "important": false,
+      "id": 6
+    },
+    {
+      "content": "Hey it was all fine before i met you",
+      "important": false,
+      "id": 7
+    },
+    {
+      "content": "I drink to much and thats an issue",
+      "important": false,
+      "id": 8
+    },
+    {
+      "content": "But I am okay",
+      "important": false,
+      "id": 9
+    },
+    {
+      "content": "Added new note in json server",
+      "important": false,
+      "id": 10
+    },
+    {
+      "content": "My name is anthony gonsalvis",
+      "important": false,
+      "id": 11
+    }
+  ]
+}
