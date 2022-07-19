@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import dispatch from "dispatch";
 import anecdoteService from "../services/notes";
 
 // const noteReducer = (state = initialState, action) => {
@@ -71,7 +70,7 @@ export const initializeNotes = () => {
   };
 };
 
-export const createNote = () => {
+export const createNote = (content) => {
   return async (dispatch) => {
     const newNote = await anecdoteService.createNew(content);
     dispatch(appendNote(newNote));

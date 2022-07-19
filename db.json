@@ -9,7 +9,11 @@
       "content": "state changes are made with actions",
       "important": false,
       "id": 2
+    },
+    {
+      "content": "Added new note in json server",
+      "important": false,
+      "id": 3
     }
-    
   ]
 }
