@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import dispatch from "dispatch";
+import anecdoteService from "../services/notes";
 
 // const noteReducer = (state = initialState, action) => {
 //   switch (action.type) {
@@ -17,7 +19,7 @@ import { createSlice } from "@reduxjs/toolkit";
 //       return state;
 //   }
 // };
-const generateId = () => Number((Math.random() * 1000000).toFixed(0));
+// const generateId = () => Number((Math.random() * 1000000).toFixed(0));
 
 // export const createNote = (content) => {
 //   return {
@@ -41,9 +43,6 @@ const noteSlice = createSlice({
   name: "notes",
   initialState: [],
   reducers: {
-    createNote(state, action) {
-      state.push(action.payload);
-    },
     toggleImportanceOf(state, action) {
       const id = action.payload;
       const noteToChange = state.find((n) => n.id === id);
@@ -61,6 +60,21 @@ const noteSlice = createSlice({
     },
   },
 });
-export const { createNote, toggleImportanceOf, appendNote, setNotes } =
-  noteSlice.actions;
+
+export const { toggleImportanceOf, appendNote, setNotes } = noteSlice.actions;
+
+//creating action creator which returns function not an object (thunk)
+export const initializeNotes = () => {
+  return async (dispatch) => {
+    const notes = await anecdoteService.getAll();
+    dispatch(setNotes(notes));
+  };
+};
+
+export const createNote = () => {
+  return async (dispatch) => {
+    const newNote = await anecdoteService.createNew(content);
+    dispatch(appendNote(newNote));
+  };
+};
 export default noteSlice.reducer;
