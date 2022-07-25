@@ -14,6 +14,11 @@
       "content": "Added new note in json server",
       "important": false,
       "id": 3
+    },
+    {
+      "content": "I have a note to complete",
+      "important": false,
+      "id": 4
     }
   ]
 }
