@@ -20,7 +20,7 @@ const Notes = (props) => {
         <Note
           key={note.id}
           note={note}
-          handleClick={() => dispatch(toggleImportanceOf(note.id))}
+          handleClick={() => props.toggleImportanceOf(note.id)}
         />
       ))}
     </ul>
@@ -41,5 +41,9 @@ const mapStateToProps = (state) => {
         : state.notes.filter((note) => !note.important),
   };
 };
-const connectedNotes = connect(mapStateToProps)(Notes);
+
+const mapDispatchToProps = {
+  toggleImportanceOf,
+};
+const connectedNotes = connect(mapStateToProps, mapDispatchToProps)(Notes);
 export default connectedNotes;
